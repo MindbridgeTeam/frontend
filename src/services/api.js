@@ -1,8 +1,8 @@
 import { mockApi } from "../mocks/mockApi";
-const mock = import.meta.env.VITE_USE_MOCK_API === "true";
+const mock = import.meta.env.VITE_USE_MOCK_API !== "false";
 export const isDemo = mock;
 const base = (
-  import.meta.env.VITE_API_BASE_URL || "https://frontend-gilt-ten-18.vercel.app/api"
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:3000/api"
 ).replace(/\/$/, "");
 // Proposed contract: JSON data envelopes and HttpOnly cookie sessions. See BACKEND.md.
 const routes = {
